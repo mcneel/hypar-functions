@@ -2,7 +2,7 @@
             
 # Rhino Head
 
-The RhinoHead function.
+Sample function that loads meshes from an embedded Rhino file.
 
 |Input Name|Type|Description|
 |---|---|---|
