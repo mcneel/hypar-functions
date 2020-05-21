@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\dependencies\RhinoHead.Dependencies.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Hypar.Elements" Version="0.7.1" />
+    <PackageReference Include="Hypar.Functions" Version="0.7.1" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- reference rhino3dm -->
+    <Reference Include="Rhino3dm" HintPath="..\lib\Rhino3dm.dll" />
+
+    <!-- copy native libs to output directory -->
+    <None Include="..\lib\librhino3dm_native.so" Link="%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="..\lib\librhino3dm_native.dylib" Link="%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+
+    <None Include="..\hello_mesh.3dm" Link="%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>
