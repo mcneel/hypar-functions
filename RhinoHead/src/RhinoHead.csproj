@@ -7,6 +7,7 @@
   <ItemGroup>
     <PackageReference Include="Hypar.Elements" Version="0.7.1" />
     <PackageReference Include="Hypar.Functions" Version="0.7.1" />
+    <PackageReference Include="rhino3dm" Version="0.1.0" />
   </ItemGroup>
 
   <PropertyGroup>
@@ -14,13 +15,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <!-- reference rhino3dm -->
-    <Reference Include="Rhino3dm" HintPath="..\lib\Rhino3dm.dll" />
-
-    <!-- copy native libs to output directory -->
-    <None Include="..\lib\librhino3dm_native.so" Link="%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
-    <None Include="..\lib\librhino3dm_native.dylib" Link="%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
-
     <None Include="..\hello_mesh.3dm" Link="%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
