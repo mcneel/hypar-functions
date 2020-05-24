@@ -24,6 +24,8 @@ namespace RhinoHead
             {
                 if (!(obj.Geometry is Rhino.Geometry.Mesh m)) continue;
 
+                m.Compact(); // remove any unreferenced vertices
+
                 var mesh = new Mesh();
 
                 foreach (var v in m.Vertices)
@@ -47,7 +49,7 @@ namespace RhinoHead
                     }
                 }
 
-                //mesh.ComputeNormals();
+                mesh.ComputeNormals();
                 var shiny = new Material("shiny", Colors.Red, 1.0, 0.9);
                 meshes.Add(new MeshElement(mesh, shiny));
             }
